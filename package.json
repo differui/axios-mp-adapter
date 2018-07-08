@@ -1,0 +1,45 @@
+{
+  "name": "axios-wx-adapter",
+  "version": "0.0.1",
+  "description": "Axios adapter that allows emit requests in wechat mini programs",
+  "main": "dest/bundle.js",
+  "scripts": {
+    "build": "./node_modules/.bin/rollup -c",
+    "watch": "./node_modules/.bin/rollup -c -w",
+    "prestart": "npm run build",
+    "start": "node dest/bundle.js",
+    "test": "./node_modules/.bin/ava -s test/**/*.spec.js"
+  },
+  "keywords": [
+    "axios",
+    "adapter",
+    "request",
+    "wechat",
+    "mini program"
+  ],
+  "author": "differui<differui@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "axios": ">= 0.18.0"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "axios": "^0.18.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-typescript": "^0.8.1",
+    "rollup-watch": "^3.2.2",
+    "sinon": "^6.1.3",
+    "typescript": "^2.9.0-rc"
+  },
+  "ava": {
+    "require": [
+      "./test/helpers/setup-wx-env.js"
+    ]
+  }
+}
