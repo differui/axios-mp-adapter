@@ -1,6 +1,6 @@
 {
   "name": "axios-wx-adapter",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Axios adapter that allows emit requests in wechat mini programs",
   "main": "dest/bundle.js",
   "scripts": {
