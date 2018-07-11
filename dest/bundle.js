@@ -7,8 +7,8 @@ var utils = _interopDefault(require('axios/lib/utils'));
 var settle = _interopDefault(require('axios/lib/core/settle'));
 var createError = _interopDefault(require('axios/lib/core/createError'));
 
-function wxAdapter(config) {
-    return new Promise(function dispatchWxRequest(resolve, reject) {
+function mpAdapter(config) {
+    return new Promise(function dispatchMpRequest(resolve, reject) {
         var requestTask;
         var requestConfig = {
             url: buildUrl(config.url, config.params, config.paramsSerializer),
@@ -55,7 +55,7 @@ function wxAdapter(config) {
         // Add request headers
         if (config.headers) {
             utils.forEach(config.headers, function setRequestHeader(val, key) {
-                if (typeof config.data !== 'undefined' && key.toLowerCase() !== 'content-type') {
+                if (typeof config.data !== 'undefined' || key.toLowerCase() !== 'content-type') {
                     requestConfig.header = requestConfig.header || {};
                     requestConfig.header[key] = val;
                 }
@@ -76,4 +76,4 @@ function wxAdapter(config) {
     });
 }
 
-module.exports = wxAdapter;
+module.exports = mpAdapter;

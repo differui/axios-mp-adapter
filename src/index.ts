@@ -4,8 +4,8 @@ import utils from 'axios/lib/utils';
 import settle from 'axios/lib/core/settle';
 import createError from 'axios/lib/core/createError';
 
-function wxAdapter(config: AxiosRequestConfig) {
-  return new Promise(function dispatchWxRequest(resolve, reject) {
+function mpAdapter(config: AxiosRequestConfig) {
+  return new Promise(function dispatchMpRequest(resolve, reject) {
     let requestTask: void|requestTask;
     const requestConfig: NetworkRequestOpts = {
       url: buildUrl(config.url, config.params, config.paramsSerializer),
@@ -55,7 +55,7 @@ function wxAdapter(config: AxiosRequestConfig) {
     // Add request headers
     if (config.headers) {
       utils.forEach(config.headers, function setRequestHeader(val: any, key: string) {
-        if (typeof config.data !== 'undefined' && key.toLowerCase() !== 'content-type') {
+        if (typeof config.data !== 'undefined' || key.toLowerCase() !== 'content-type') {
           requestConfig.header = requestConfig.header  || {};
           requestConfig.header![key] = val;
         }
@@ -77,4 +77,4 @@ function wxAdapter(config: AxiosRequestConfig) {
   });
 }
 
-export default wxAdapter;
+export default mpAdapter;

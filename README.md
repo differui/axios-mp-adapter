@@ -1,17 +1,17 @@
-# axios-wx-adapter
+# axios-mp-adapter
 
 <p>
     <a href="LICENSE">
         <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="Software License" />
     </a>
-    <a href="https://github.com/differui/axios-wx-adapter/issues">
-        <img src="https://img.shields.io/github/issues/differui/axios-wx-adapter.svg" alt="Issues" />
+    <a href="https://github.com/differui/axios-mp-adapter/issues">
+        <img src="https://img.shields.io/github/issues/differui/axios-mp-adapter.svg" alt="Issues" />
     </a>
-    <a href="https://npmjs.org/package/axios-wx-adapter">
-        <img src="https://img.shields.io/npm/v/axios-wx-adapter.svg?style=flat-squar" alt="NPM" />
+    <a href="https://npmjs.org/package/axios-mp-adapter">
+        <img src="https://img.shields.io/npm/v/axios-mp-adapter.svg?style=flat-squar" alt="NPM" />
     </a>
-    <a href="https://travis-ci.org/differui/axios-wx-adapter">
-        <img src="https://travis-ci.org/differui/axios-wx-adapter.svg?branch=master" />
+    <a href="https://travis-ci.org/differui/axios-mp-adapter">
+        <img src="https://travis-ci.org/differui/axios-mp-adapter.svg?branch=master" />
     </a>
 </p>
 
@@ -20,18 +20,18 @@
 Using npm:
 
 ```bash
-npm i axios-wx-adapter --save-dev
+npm i axios-mp-adapter --save-dev
 ```
 
 ## Example
 
 ```js
 var axios = require('axios');
-var wxAdapter = require('axios-wx-adapter');
+var mpAdapter = require('axios-mp-adapter');
 
 axios({
   url: 'https://foo.bar',
-  adapter: wxAdapter,
+  adapter: mpAdapter,
 }).then((response) => {
   // handle the response
 });

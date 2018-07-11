@@ -1,6 +1,6 @@
 import test from 'ava';
 import axios from 'axios';
-import wxAdapter from '../../';
+import mpAdapter from '../../';
 
 test('should settle response', async (t) => {
   wx.request = function (config) {
@@ -18,7 +18,7 @@ test('should settle response', async (t) => {
 
   const response = await axios({
     url: 'foo',
-    adapter: wxAdapter,
+    adapter: mpAdapter,
   });
 
   t.is(response.data.foo, 'foo');

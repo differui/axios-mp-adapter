@@ -1,7 +1,7 @@
 import test from 'ava';
 import axios from 'axios';
 import sinon from 'sinon';
-import wxAdapter from '../../';
+import mpAdapter from '../../';
 
 test('should error response', async (t) => {
   let cancel;
@@ -17,7 +17,7 @@ test('should error response', async (t) => {
     setTimeout(() => cancel('message'), 100);
     await axios({
       url: 'foo',
-      adapter: wxAdapter,
+      adapter: mpAdapter,
       cancelToken: new axios.CancelToken((c) => {
         cancel = c;
       }),

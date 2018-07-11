@@ -1,7 +1,7 @@
 import test from 'ava';
 import axios from 'axios';
 import sinon from 'sinon';
-import wxAdapter from '../../';
+import mpAdapter from '../../';
 
 test('should build url with params', async (t) => {
   const spy = sinon.spy(wx, 'request');
@@ -13,7 +13,7 @@ test('should build url with params', async (t) => {
       foo: 'foo',
       bar: 'bar',
     },
-    adapter: wxAdapter,
+    adapter: mpAdapter,
   });
 
   await wait(100);

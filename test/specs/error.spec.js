@@ -1,6 +1,6 @@
 import test from 'ava';
 import axios from 'axios';
-import wxAdapter from '../../';
+import mpAdapter from '../../';
 
 test('should error response', async (t) => {
   wx.request = function (config) {
@@ -24,7 +24,7 @@ test('should error response', async (t) => {
   try {
     await axios({
       url: 'foo',
-      adapter: wxAdapter,
+      adapter: mpAdapter,
     })
   } catch(err) {
     t.is(err.code, 400);

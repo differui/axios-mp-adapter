@@ -1,14 +1,14 @@
 import test from 'ava';
 import axios from 'axios';
 import sinon from 'sinon';
-import wxAdapter from '../../';
+import mpAdapter from '../../';
 
 test('should use defaults config', async (t) => {
   const spy = sinon.spy(wx, 'request');
 
   axios({
     url: 'foo',
-    adapter: wxAdapter,
+    adapter: mpAdapter,
   });
 
   await wait(100);
